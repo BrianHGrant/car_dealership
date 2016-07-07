@@ -15,5 +15,21 @@ describe(Vehicle) do
     end
   end
 
+  describe('#save') do
+    it('add vehicle to the array of saved vehicles') do
+      test_vehicle = Vehicle.new({:make=> "Toyota", :model => "Prius", :year => "2000", :color => "blue", :engine_size => "4L", :number_of_doors => "4"})
+      test_vehicle.save()
+      expect(Vehicle.all()).to eq([test_vehicle])
+    end
+  end
+
+  describe('.clear') do
+    it('clear the stored vehicles from save vehicle array') do
+      Vehicle.clear()
+      expect(Vehicle.all()).to eq([])
+    end
+  end
+
+
 
 end

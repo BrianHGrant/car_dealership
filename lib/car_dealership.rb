@@ -15,6 +15,12 @@ class Vehicle
   define_singleton_method (:all) do
     @@vehicles
   end
-end
 
-# @@vehicles.push(self)
+  define_method (:save) do
+    @@vehicles.push(self)
+  end
+
+  define_singleton_method (:clear) do
+    @@vehicles = []
+  end
+end
