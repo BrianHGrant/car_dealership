@@ -2,9 +2,9 @@
 
 <ul>
   <% @dealership.cars().each() do |car| %>
-  <li><a href="/vehicles/<%= car.id() %>"><%= car.model() %> <%= car.year() %></a></li>
+  <li><a href="/vehicles/<%= car.id() %>"><%= car.make() %> <%= car.model() %> <%= car.year() %> <%= car.color() %> <%= car.engine_size() %> <%= car.number_of_doors() %></a></li>
   <% end %>
 </ul>
 
-<a href="dealerships/<%= @dealership.id() %>/vehicles/new">Add a new vehicle</a>
+<a href="/dealerships/<%= @dealership.id%>/vehicles/new">Add a new vehicle</a>
 <a href="/">Return to Main Page</a>
